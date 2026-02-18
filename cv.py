@@ -55,17 +55,18 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.write("2025")
-    st.write("2019 - 2022")
-    st.write("2023 - 2024")
     st.write("2024")
-    st.write("2022")
-
+    st.write("2023")
+    st.write("2023 - 2024")
+    st.write("2019 - 2022")
+   
 with col2:
     st.write("Attestation de stage en Topographie (CasaTopo)")
-    st.write("Licence en Géographie (U. Assane Seck)")
-    st.write ("Premier Année BTS en Géomatique (CEDT)")
     st.write("Certificat Technique de Voix Off")
     st.write("Attestation Hôtellerie & Restauration")
+    st.write ("Premier Année BTS en Géomatique (CEDT)")
+    st.write("Licence en Géographie (U. Assane Seck)")
+   
 
 st.write("2019 : BAC | 2016 : BFEM")
 
