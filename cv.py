@@ -27,10 +27,11 @@ with st.sidebar:
     st.write("📧 djabousonko@gmail.com")
     st.write("🏠 Dakar, Patte d'Oie")
     st.write("---")
-    st.header("🌐 Langues")
+     st.header("🌐 Langues")
     st.write("- Anglais\n- Français\n- Wolof\n- Diola")
     st.header("🎨 Loisirs")
     st.write("- Lecture\n- Fitness")
+   
 
 # --- EN-TÊTE ---
 st.title("DJABOU SONKO")
@@ -71,6 +72,10 @@ st.header("🛠 Compétences Techniques")
 skills = ["ArcGIS", "QGIS", "AutoCAD","Covadis","Kobocollect", "PostgreSQL", "Wampserver", "Word", "Excel", "PowerPoint", "Access"]
 skill_html = "".join([f'<span class="skill-tag">{s}</span>' for s in skills])
 st.markdown(skill_html, unsafe_allow_html=True)
+
+# --- PROJET D'AVENIR ---
+st.info ("Je veux travailler en meme temps continué mes études pour obtenir un Master")
+
 
 # --- TÉLÉCHARGEMENT ---
 st.write("---")
