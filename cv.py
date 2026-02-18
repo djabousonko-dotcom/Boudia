@@ -1,101 +1,81 @@
 import streamlit as st
 
-# Configuration de la page avec un emoji de globe pour la géomatique
-st.set_page_config(page_title="CV Géomatique - Étudiant", page_icon="🌍", layout="centered")
+# Configuration de la page
+st.set_page_config(page_title="Mon CV Interactif", page_icon="📄", layout="centered")
 
-# --- STYLE CSS PERSONNALISÉ ---
-st.markdown("""
-    <style>
-    .main {
-        background-color: #f8f9fa;
-    }
-    .stProgress > div > div > div > div {
-        background-color: #2ecc71;
-    }
-    h1 {
-        color: #2c3e50;
-    }
-    h2 {
-        color: #16a085;
-        border-bottom: 2px solid #16a085;
-        padding-bottom: 10px;
-    }
-    .job-date {
-        float: right;
-        font-style: italic;
-        color: #7f8c8d;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-# --- ENTÊTE ---
-col1, col2 = st.columns([1, 3])
+# --- SECTION ENTÊTE ---
+col1, col2 = st.columns([1, 3], gap="small")
 with col1:
-    st.write("## 📍") # Tu pourras remplacer par st.image("photo.jpg")
-with col2:
-    st.title("VOTRE PRÉNOM NOM")
-    st.write("**Étudiant en 2ème année de BTS Géomatique**")
-    st.write("📧 email@exemple.com | 📱 06 00 00 00 00")
+    # Si vous avez une photo, remplacez par : st.image("photo.jpg", width=150)
+    st.write("📸") 
 
-# --- FORMATION ---
-st.header("🎓 Formation")
-col_edu, col_date = st.columns([3, 1])
-with col_edu:
-    st.markdown("**BTS Géomatique (2ème année)**")
-    st.write("Spécialité : Acquisition et traitement de données géographiques")
-with col_date:
-    st.write("  \n**2025 - 2026**")
+with col2:
+    st.title("VOTRE NOM ET PRÉNOM")
+    st.write("Développeur Python | Data Analyst")
+    st.write("📍 Paris, France")
+    st.write("📧 email@exemple.com")
+
+# --- BARRE LATÉRALE (Contact & Liens) ---
+st.sidebar.title("Contact")
+st.sidebar.info("""
+- [LinkedIn](https://linkedin.com)
+- [GitHub](https://github.com)
+- [Portfolio](https://mon-site.com)
+""")
+
+# --- RÉSUMÉ / PROFIL ---
+st.write("---")
+st.subheader("Profil Professionnel")
+st.write("""
+Développeur passionné par la création d'outils interactifs et l'analyse de données. 
+Expert en Python avec une forte capacité à résoudre des problèmes complexes.
+""")
+
+# --- COMPÉTENCES ---
+st.write("---")
+st.subheader("Compétences")
+col_c1, col_c2 = st.columns(2)
+
+with col_c1:
+    st.write("**Langages**")
+    st.progress(95, text="Python")
+    st.progress(80, text="SQL")
+    st.progress(70, text="JavaScript")
+
+with col_c2:
+    st.write("**Outils**")
+    st.write("- Streamlit, Pandas, NumPy")
+    st.write("- Docker, Git, VS Code")
+    st.write("- AWS / Google Cloud")
 
 # --- EXPÉRIENCES ---
-st.header("💼 Expériences Professionnelles")
+st.write("---")
+st.subheader("Expériences Professionnelles")
 
-# Stage Topographie
-st.markdown(f"**Stage en Topographie** <span class='job-date'>Été 2025</span>", unsafe_allow_html=True)
-st.write("""
-- Levés topographiques sur le terrain (Théodolite, GPS différentiel).
-- Implantation d'ouvrages et calculs de polygonation.
-- Traitement des données terrain et mise au plan.
-""")
+with st.expander("Développeur Junior - Tech Corp (2022 - Présent)"):
+    st.write("""
+    - Développement d'interfaces de visualisation de données.
+    - Automatisation de rapports via des scripts Python.
+    - Collaboration en équipe agile (Scrum).
+    """)
 
-# Projet d'intégration
-st.markdown(f"**Projet d'Intégration Géomatique** <span class='job-date'>2025</span>", unsafe_allow_html=True)
-st.write("""
-- Conception d'un Système d'Information Géographique (SIG) complet.
-- Collecte, structuration et intégration de données hétérogènes.
-- Analyse spatiale et production de cartes thématiques.
-""")
+with st.expander("Stage Data Analyst - Startup X (2021)"):
+    st.write("""
+    - Nettoyage de bases de données avec Pandas.
+    - Création de tableaux de bord interactifs.
+    """)
 
-# --- COMPÉTENCES TECHNIQUES ---
-st.header("🛠️ Compétences Techniques")
+# --- FORMATION ---
+st.write("---")
+st.subheader("Formation")
+st.write("**Master en Informatique** - Université de Paris (2021)")
+st.write("**Licence Mathématiques Appliquées** - (2019)")
 
-c1, c2 = st.columns(2)
-with c1:
-    st.subheader("Informatique")
-    st.progress(85, text="Python (Streamlit, Pandas)")
-    st.progress(75, text="HTML / CSS (Web mapping)")
-    st.progress(90, text="Logiciels SIG (QGIS / ArcGIS)")
-
-with c2:
-    st.subheader("Topographie")
-    st.write("- Levés GNSS et Station Totale")
-    st.write("- DAO / CAO (AutoCAD)")
-    st.write("- Photogrammétrie par drone")
-
-# --- SECTION INTERACTIVE ---
-st.sidebar.header("À propos")
-st.sidebar.write("""
-Passionné par la convergence entre la **géographie** et le **développement informatique**. 
-Ce CV a été entièrement codé en **Python** via la bibliothèque **Streamlit**.
-""")
-
-if st.sidebar.button("Afficher ma motivation"):
-    st.sidebar.success("Je suis à la recherche d'un stage de fin d'études ou d'une alternance pour perfectionner mes compétences en développement SIG !")
-
-# --- BOUTON DE TÉLÉCHARGEMENT ---
+# --- BOUTON DE TÉLÉCHARGEMENT (Simulé) ---
 st.write("---")
 st.download_button(
-    label="📄 Télécharger le CV (PDF)",
-    data="Fichier PDF réel ici",
-    file_name="CV_Geomatique_2025.pdf",
-    mime="application/pdf"
+    label="⬇️ Télécharger mon CV au format PDF",
+    data="Contenu fictif du PDF",
+    file_name="mon_cv.pdf",
+    mime="application/pdf",
 )
