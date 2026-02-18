@@ -1,54 +1,79 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon CV Professionnel</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+import streamlit as st
 
-    <div class="cv-container">
-        <header>
-            <h1>VOTRE PRÉNOM NOM</h1>
-            <p class="job-title">Développeur Junior / Votre Métier</p>
-        </header>
+# Configuration de la page
+st.set_page_config(page_title="CV - Djabou Sonko", page_icon="🌍", layout="centered")
 
-        <div class="main-content">
-            <aside class="sidebar">
-                <section>
-                    <h3>Contact</h3>
-                    <p>📧 email@exemple.com</p>
-                    <p>📱 06 00 00 00 00</p>
-                    <p>🔗 linkedin.com/in/pseudo</p>
-                </section>
+# --- STYLE CSS PERSONNALISÉ ---
+st.markdown("""
+    <style>
+    .main { background-color: #f8f9fa; }
+    .stHeader { color: #2c3e50; }
+    .skill-tag {
+        background-color: #e1f5fe;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin: 5px;
+        display: inline-block;
+        color: #01579b;
+        font-weight: bold;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
-                <section>
-                    <h3>Compétences</h3>
-                    <ul>
-                        <li>HTML5 / CSS3</li>
-                        <li>JavaScript</li>
-                        <li>Gestion de projet</li>
-                    </ul>
-                </section>
-            </aside>
+# --- BARRE LATÉRALE (CONTACT) ---
+with st.sidebar:
+    st.title("📍 Contact")
+    st.write("📞 +221 77 663 37 68")
+    st.write("📧 djabousonko@gmail.com")
+    st.write("🏠 Dakar, Patte d'Oie")
+    st.write("---")
+    st.header("🌐 Langues")
+    st.write("- Anglais\n- Français\n- Wolof\n- Diola")
+    st.header("🎨 Loisirs")
+    st.write("- Lecture\n- Fitness")
 
-            <section class="experience">
-                <h2>Expériences Professionnelles</h2>
-                <div class="job">
-                    <h4>Stage Développeur - Entreprise X</h4>
-                    <p class="date">Janvier 2023 - Juin 2023</p>
-                    <p>Mise à jour du site vitrine et correction de bugs.</p>
-                </div>
+# --- EN-TÊTE ---
+st.title("DJABOU SONKO")
+st.subheader("GEOMATICIENNE")
+st.info("Technicienne en géomatique maîtrisant ArcGIS, QGIS et AutoCAD. Spécialisée en cartographie, collecte et analyse de données spatiales, avec expérience en utilisation de drones et outils bureautiques.")
 
-                <h2>Formation</h2>
-                <div class="edu">
-                    <h4>BTS Informatique</h4>
-                    <p class="date">2021 - 2023</p>
-                </div>
-            </section>
-        </div>
-    </div>
+# --- EXPERIENCE ---
+st.header("🚀 Expérience Professionnelle")
+st.markdown("""
+- Réalisation de cartes thématiques sur QGIS.
+- Projet universitaire : Collecte de données topographiques avec drone.
+- Mission de terrain : Analyse de données spatiales pour un projet d'aménagement.
+- Pilotage de drone et utilisation de Mobile Topographer.
+- Confection de plans sur AutoCAD.
+""")
 
-</body>
-</html
+# --- EDUCATION ---
+st.header("🎓 Éducation")
+col1, col2 = st.columns(2)
+
+with col1:
+    st.write("2024 - 2025")
+    st.write("2023 - 2024")
+    st.write("2022")
+
+with col2:
+    st.write("Licence 1 en Géomatique (CEDT)")
+    st.write("Licence en Géographie (U. Assane Seck)")
+    st.write("Attestation Hôtellerie & Restauration")
+
+st.write("2019 : BAC | 2016 : BFEM")
+
+# --- COMPÉTENCES ---
+st.header("🛠 Compétences Techniques")
+skills = ["ArcGIS", "QGIS", "AutoCAD", "PostgreSQL", "Wampserver", "Word", "Excel", "PowerPoint", "Access"]
+skill_html = "".join([f'<span class="skill-tag">{s}</span>' for s in skills])
+st.markdown(skill_html, unsafe_allow_html=True)
+
+# --- TÉLÉCHARGEMENT ---
+st.write("---")
+st.download_button(
+    label="📄 Télécharger le CV complet (PDF)",
+    data=b"Le contenu de votre PDF ici", # À remplacer par le vrai fichier
+    file_name="CV_Djabou_Sonko.pdf",
+    mime="application/pdf",
+)
