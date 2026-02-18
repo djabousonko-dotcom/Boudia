@@ -1,81 +1,79 @@
 import streamlit as st
 
 # Configuration de la page
-st.set_page_config(page_title="Mon CV Interactif", page_icon="📄", layout="centered")
+st.set_page_config(page_title="CV - Djabou Sonko", page_icon="🌍", layout="centered")
 
-# --- SECTION ENTÊTE ---
-col1, col2 = st.columns([1, 3], gap="small")
+# --- STYLE CSS PERSONNALISÉ ---
+st.markdown("""
+    <style>
+    .main { background-color: #f8f9fa; }
+    .stHeader { color: #2c3e50; }
+    .skill-tag {
+        background-color: #e1f5fe;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin: 5px;
+        display: inline-block;
+        color: #01579b;
+        font-weight: bold;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+# --- BARRE LATÉRALE (CONTACT) ---
+with st.sidebar:
+    st.title("📍 Contact")
+    st.write("📞 +221 77 663 37 68")
+    st.write("📧 djabousonko@gmail.com")
+    st.write("🏠 Dakar, Patte d'Oie")
+    st.write("---")
+    st.header("🌐 Langues")
+    st.write("- Anglais\n- Français\n- Wolof\n- Diola")
+    st.header("🎨 Loisirs")
+    st.write("- Lecture\n- Fitness")
+
+# --- EN-TÊTE ---
+st.title("DJABOU SONKO")
+st.subheader("GEOMATICIENNE")
+st.info("Technicienne en géomatique maîtrisant ArcGIS, QGIS et AutoCAD. Spécialisée en cartographie, collecte et analyse de données spatiales, avec expérience en utilisation de drones et outils bureautiques.")
+
+# --- EXPERIENCE ---
+st.header("🚀 Expérience Professionnelle")
+st.markdown("""
+- Réalisation de cartes thématiques sur QGIS.
+- Projet universitaire : Collecte de données topographiques avec drone.
+- Mission de terrain : Analyse de données spatiales pour un projet d'aménagement.
+- Pilotage de drone et utilisation de Mobile Topographer.
+- Confection de plans sur AutoCAD.
+""")
+
+# --- EDUCATION ---
+st.header("🎓 Éducation")
+col1, col2 = st.columns(2)
+
 with col1:
-    # Si vous avez une photo, remplacez par : st.image("photo.jpg", width=150)
-    st.write("📸") 
+    st.write("2024 - 2025")
+    st.write("2023 - 2024")
+    st.write("2022")
 
 with col2:
-    st.title("VOTRE NOM ET PRÉNOM")
-    st.write("Développeur Python | Data Analyst")
-    st.write("📍 Paris, France")
-    st.write("📧 email@exemple.com")
+    st.write("Licence 1 en Géomatique (CEDT)")
+    st.write("Licence en Géographie (U. Assane Seck)")
+    st.write("Attestation Hôtellerie & Restauration")
 
-# --- BARRE LATÉRALE (Contact & Liens) ---
-st.sidebar.title("Contact")
-st.sidebar.info("""
-- [LinkedIn](https://linkedin.com)
-- [GitHub](https://github.com)
-- [Portfolio](https://mon-site.com)
-""")
-
-# --- RÉSUMÉ / PROFIL ---
-st.write("---")
-st.subheader("Profil Professionnel")
-st.write("""
-Développeur passionné par la création d'outils interactifs et l'analyse de données. 
-Expert en Python avec une forte capacité à résoudre des problèmes complexes.
-""")
+st.write("2019 : BAC | 2016 : BFEM")
 
 # --- COMPÉTENCES ---
-st.write("---")
-st.subheader("Compétences")
-col_c1, col_c2 = st.columns(2)
+st.header("🛠 Compétences Techniques")
+skills = ["ArcGIS", "QGIS", "AutoCAD", "PostgreSQL", "Wampserver", "Word", "Excel", "PowerPoint", "Access"]
+skill_html = "".join([f'<span class="skill-tag">{s}</span>' for s in skills])
+st.markdown(skill_html, unsafe_allow_html=True)
 
-with col_c1:
-    st.write("**Langages**")
-    st.progress(95, text="Python")
-    st.progress(80, text="SQL")
-    st.progress(70, text="JavaScript")
-
-with col_c2:
-    st.write("**Outils**")
-    st.write("- Streamlit, Pandas, NumPy")
-    st.write("- Docker, Git, VS Code")
-    st.write("- AWS / Google Cloud")
-
-# --- EXPÉRIENCES ---
-st.write("---")
-st.subheader("Expériences Professionnelles")
-
-with st.expander("Développeur Junior - Tech Corp (2022 - Présent)"):
-    st.write("""
-    - Développement d'interfaces de visualisation de données.
-    - Automatisation de rapports via des scripts Python.
-    - Collaboration en équipe agile (Scrum).
-    """)
-
-with st.expander("Stage Data Analyst - Startup X (2021)"):
-    st.write("""
-    - Nettoyage de bases de données avec Pandas.
-    - Création de tableaux de bord interactifs.
-    """)
-
-# --- FORMATION ---
-st.write("---")
-st.subheader("Formation")
-st.write("**Master en Informatique** - Université de Paris (2021)")
-st.write("**Licence Mathématiques Appliquées** - (2019)")
-
-# --- BOUTON DE TÉLÉCHARGEMENT (Simulé) ---
+# --- TÉLÉCHARGEMENT ---
 st.write("---")
 st.download_button(
-    label="⬇️ Télécharger mon CV au format PDF",
-    data="Contenu fictif du PDF",
-    file_name="mon_cv.pdf",
+    label="📄 Télécharger le CV complet (PDF)",
+    data=b"Le contenu de votre PDF ici", # À remplacer par le vrai fichier
+    file_name="CV_Djabou_Sonko.pdf",
     mime="application/pdf",
 )
