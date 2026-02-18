@@ -61,8 +61,8 @@ with col1:
 
 with col2:
     st.write("Attestation de stage en Topographie (CasaTopo)")
-    st.write("Premier Année BTS en Géomatique (CEDT)")
     st.write("Licence en Géographie (U. Assane Seck)")
+    st.write ("Premier Année BTS en Géomatique (CEDT)")
     st.write("Attestation Hôtellerie & Restauration")
 
 st.write("2019 : BAC | 2016 : BFEM")
@@ -72,10 +72,6 @@ st.header("🛠 Compétences Techniques")
 skills = ["ArcGIS", "QGIS", "AutoCAD","Covadis","Kobocollect", "PostgreSQL", "Wampserver", "Word", "Excel", "PowerPoint", "Access"]
 skill_html = "".join([f'<span class="skill-tag">{s}</span>' for s in skills])
 st.markdown(skill_html, unsafe_allow_html=True)
-
-# --- PROJET D'AVENIR ---
-st.info ("Je veux travailler en meme temps continué mes études pour obtenir un Master")
-
 
 # --- TÉLÉCHARGEMENT ---
 st.write("---")
