@@ -1,45 +1,54 @@
-import streamlit as st
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Mon CV - Développeur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CV Professionnel</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+
+    <div class="cv-container">
         <header>
-            <h1>VOTRE NOM</h1>
-            <p class="subtitle">Développeur Fullstack</p>
-            <div class="contact-info">
-                <p>📧 email@exemple.com</p>
-                <p>📱 06 00 00 00 00</p>
-                <p>📍 Paris, France</p>
-            </div>
+            <h1>VOTRE PRÉNOM NOM</h1>
+            <p class="job-title">Développeur Junior / Votre Métier</p>
         </header>
 
-        <main>
-            <section>
-                <h2>Expériences Professionnelles</h2>
-                <div class="item">
-                    <h3>Développeur Web - Entreprise Tech</h3>
-                    <span class="date">2022 - Présent</span>
-                    <ul>
-                        <li>Développement d'interfaces en React.</li>
-                        <li>Optimisation des bases de données.</li>
-                    </ul>
-                </div>
-            </section>
+        <div class="main-content">
+            <aside class="sidebar">
+                <section>
+                    <h3>Contact</h3>
+                    <p>📧 email@exemple.com</p>
+                    <p>📱 06 00 00 00 00</p>
+                    <p>🔗 linkedin.com/in/pseudo</p>
+                </section>
 
-            <section>
-                <h2>Compétences</h2>
-                <div class="skills">
-                    <span>HTML/CSS</span>
-                    <span>JavaScript</span>
-                    <span>VS Code</span>
+                <section>
+                    <h3>Compétences</h3>
+                    <ul>
+                        <li>HTML5 / CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Gestion de projet</li>
+                    </ul>
+                </section>
+            </aside>
+
+            <section class="experience">
+                <h2>Expériences Professionnelles</h2>
+                <div class="job">
+                    <h4>Stage Développeur - Entreprise X</h4>
+                    <p class="date">Janvier 2023 - Juin 2023</p>
+                    <p>Mise à jour du site vitrine et correction de bugs.</p>
+                </div>
+
+                <h2>Formation</h2>
+                <div class="edu">
+                    <h4>BTS Informatique</h4>
+                    <p class="date">2021 - 2023</p>
                 </div>
             </section>
-        </main>
+        </div>
     </div>
+
 </body>
-</html>
+</html
