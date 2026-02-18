@@ -27,7 +27,7 @@ with st.sidebar:
     st.write("📧 djabousonko@gmail.com")
     st.write("🏠 Dakar, Patte d'Oie")
     st.write("---")
-     st.header("🌐 Langues")
+    st.header("🌐 Langues")
     st.write("- Anglais\n- Français\n- Wolof\n- Diola")
     st.header("🎨 Loisirs")
     st.write("- Lecture\n- Fitness")
