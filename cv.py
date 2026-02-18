@@ -1,4 +1,12 @@
-.main {
+import streamlit as st
+
+# Configuration de la page avec un emoji de globe pour la géomatique
+st.set_page_config(page_title="CV Géomatique - Étudiant", page_icon="🌍", layout="centered")
+
+# --- STYLE CSS PERSONNALISÉ ---
+st.markdown("""
+    <style>
+    .main {
         background-color: #f8f9fa;
     }
     .stProgress > div > div > div > div {
