@@ -41,10 +41,11 @@ st.info("Technicienne en géomatique maîtrisant ArcGIS, QGIS et AutoCAD. Spéci
 st.header("🚀 Expérience Professionnelle")
 st.markdown("""
 - Réalisation de cartes thématiques sur QGIS.
-- Projet universitaire : Collecte de données topographiques avec drone.
+- Projet universitaire : Collecte de données topographiques avec drone .
 - Mission de terrain : Analyse de données spatiales pour un projet d'aménagement.
 - Pilotage de drone et utilisation de Mobile Topographer.
-- Confection de plans sur AutoCAD.
+- Confection de plans sur AutoCAD et Covadis.
+- Réalisation d'une base de donnée avec Power AMC et Arcgis
 """)
 
 # --- EDUCATION ---
@@ -52,12 +53,14 @@ st.header("🎓 Éducation")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.write("2024 - 2025")
+    st.write("2025")
+    st.write("2019 - 2022")
     st.write("2023 - 2024")
     st.write("2022")
 
 with col2:
-    st.write("Licence 1 en Géomatique (CEDT)")
+    st.write("Attestation de stage en Topographie (CasaTopo)")
+    st.write("Premier Année BTS en Géomatique (CEDT)")
     st.write("Licence en Géographie (U. Assane Seck)")
     st.write("Attestation Hôtellerie & Restauration")
 
@@ -65,7 +68,7 @@ st.write("2019 : BAC | 2016 : BFEM")
 
 # --- COMPÉTENCES ---
 st.header("🛠 Compétences Techniques")
-skills = ["ArcGIS", "QGIS", "AutoCAD", "PostgreSQL", "Wampserver", "Word", "Excel", "PowerPoint", "Access"]
+skills = ["ArcGIS", "QGIS", "AutoCAD","Covadis","Kobocollect", "PostgreSQL", "Wampserver", "Word", "Excel", "PowerPoint", "Access"]
 skill_html = "".join([f'<span class="skill-tag">{s}</span>' for s in skills])
 st.markdown(skill_html, unsafe_allow_html=True)
 
