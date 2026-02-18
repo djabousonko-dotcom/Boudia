@@ -28,7 +28,7 @@ with st.sidebar:
     st.write("🏠 Dakar, Patte d'Oie")
     st.write("---")
     st.header("🌐 Langues")
-    st.write("- Anglais\n- Français\n- Wolof\n- Diola")
+    st.write("- Français\n- Wolof\n- Diola")
     st.header("🎨 Loisirs")
     st.write("- Lecture\n- Fitness")
    
@@ -57,19 +57,21 @@ with col1:
     st.write("2025")
     st.write("2019 - 2022")
     st.write("2023 - 2024")
+    st.write("2024")
     st.write("2022")
 
 with col2:
     st.write("Attestation de stage en Topographie (CasaTopo)")
     st.write("Licence en Géographie (U. Assane Seck)")
     st.write ("Premier Année BTS en Géomatique (CEDT)")
+    st.write("Certificat Technique de Voix Off")
     st.write("Attestation Hôtellerie & Restauration")
 
 st.write("2019 : BAC | 2016 : BFEM")
 
 # --- COMPÉTENCES ---
 st.header("🛠 Compétences Techniques")
-skills = ["ArcGIS", "QGIS", "AutoCAD","Covadis","Kobocollect", "PostgreSQL", "Wampserver", "Word", "Excel", "PowerPoint", "Access"]
+skills = ["ArcGIS", "QGIS", "AutoCAD","Covadis","Kobocollect", "PostgreSQL", "PowerAMC", "Wampserver", "Word", "Excel", "PowerPoint", "Access"]
 skill_html = "".join([f'<span class="skill-tag">{s}</span>' for s in skills])
 st.markdown(skill_html, unsafe_allow_html=True)
 
